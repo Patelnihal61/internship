@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Student Registration Form</h2>
+    <form action="/form" method="POST">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="male" name="gender" value="male">
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="female" name="gender" value="female">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="other" name="gender" value="other">
+          <label class="form-check-label" for="other">Other</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <select class="form-control" id="nationality" name="nationality" required>
+          <option value="">--Select--</option>
+          <option value="indian">Indian</option>
+          <option value="australian">Australian</option>
+          <option value="chinese">Chinese</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number</label>
+        <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Enter your contact number">
+      </div>
+      <div class="form-group">
+        <label for="address">Permanent Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your permanent address"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="highSchool">High School Name</label>
+        <input type="text" class="form-control" id="highSchool" name="highSchool" placeholder="Enter your high school name">
+      </div>
+      <div class="form-group">
+        <label for="graduationYear">High School Graduation Year</label>
+        <input type="text" class="form-control" id="graduationYear" name="graduationYear" placeholder="Enter your graduation year">
+      </div>
+      <div class="form-group">
+        <label for="gpa">High School GPA</label>
+        <input type="text" class="form-control" id="gpa" name="gpa" placeholder="Enter your GPA">
+      </div>
+      <div class="form-group">
+        <label for="subjects">Subjects Studied</label>
+        <input type="text" class="form-control" id="subjects" name="subjects" placeholder="Enter subjects studied">
+      </div>
+      <div class="form-group">
+        <label for="program">Program of Interest</label>
+        <input type="text" class="form-control" id="program" name="program" placeholder="Enter program of interest">
+      </div>
+      <div class="form-group">
+        <label for="startDate">Preferred Start Date</label>
+        <input type="text" class="form-control" id="startDate" name="startDate" placeholder="Enter preferred start date">
+      </div>
+      <div class="form-group">
+        <label for="degreeType">Degree Type</label>
+        <select class="form-control" id="degreeType" name="degreeType">
+          <option>Bachelor's</option>
+          <option>Master's</option>
+          <option>Doctorate</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="activities">Extracurricular Activities</label>
+        <textarea class="form-control" id="activities" name="activities" rows="3" placeholder="Enter extracurricular activities"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experience">Work Experience</label>
+        <textarea class="form-control" id="experience" name="experience" rows="3" placeholder="Enter work experience (if any)"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="languages">Languages Spoken</label>
+        <input type="text" class="form-control" id="languages" name="languages" placeholder="Enter languages spoken">
+      </div>
+      <div class="form-group">
+        <label for="accommodations">Special Accommodations Needed</label>
+        <textarea class="form-control" id="accommodations" name="accommodations" rows="3" placeholder="Enter special accommodations needed"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="emergencyContact">Emergency Contact Name</label>
+        <input type="text" class="form-control" id="emergencyContact" name="emergencyContact" placeholder="Enter emergency contact name">
+      </div>
+      <div class="form-group">
+        <label for="relationship">Relationship to Applicant</label>
+        <input type="text" class="form-control" id="relationship" name="relationship" placeholder="Enter relationship to applicant">
+      </div>
+      <div class="form-group">
+        <label for="emergencyNumber">Emergency Contact Number</label>
+        <input type="tel" class="form-control" id="emergencyNumber" name="emergencyNumber" placeholder="Enter emergency contact number">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="declaration" name="declaration">
+        <label class="form-check-label" for="declaration">I hereby certify that the information provided above is true and accurate to the best of my knowledge.</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

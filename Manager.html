@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager</title>
+</head>
+<body>
+    <h1>Welcome Manager</h1>
+    <h2>Files Uploaded by Editor</h2>
+    <h2>Uploaded Files</h2>
+    <ul id="file-list"></ul>
+    
+    <script>
+        fetch('/list')
+            .then(response => response.json())
+            .then(files => {
+                const fileList = document.querySelector('#file-list');
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `${file.originalName} 
+                        (<a href="/download/${file._id}">Download</a>)
+                        (<button onclick="approveFile('${file._id}')">Approve</button>)`;
+                    fileList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error(error));
+
+        function approveFile(fileId) {
+            fetch(`/approve/${fileId}`, { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        alert('File approved successfully');
+                    } else {
+                        alert('Failed to approve file');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

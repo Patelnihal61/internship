@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    <h2>Files approved by Manager</h2>
+    <ul id="file-approved-list"></ul>
+    <script>
+        fetch('/Approvedlist')
+            .then(response => response.json())
+            .then(files => {
+                const fileList = document.querySelector('#file-approved-list');
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `${file.originalName} 
+                        (<a href="/download/${file._id}">Download</a>)`;
+                    fileList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
